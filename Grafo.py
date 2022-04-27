@@ -1,3 +1,7 @@
+from asyncio.windows_events import NULL
+from dis import dis
+
+
 class Grafo:
   def __init__(self, num_vert = 0, lista_adj = None, mat_adj = None):
     # construtor deum  grafo
@@ -184,6 +188,27 @@ class Grafo:
           R.append(v[0])
   
         desc [v[0]] = 1
-    return False      
+    return False     
+
+  def valorMinimo(list):
+    u = float("inf")
+    for i in range(len(list)):
+      if list[i[1]]<u:
+        u = list[i]
+    return u
+
+  def dijkstra(self,s):
+    dist = [ float("inf") for i in range(len(self.lista_adj)) ]
+    pred = [ NULL for i in range(len(self.list_adj))]
+    dist[s] = 0
+    Q = self.list_adj
     
+    while len(Q) != 0 :
+      u = self.valorMinimo(dist)
+      Q.remove(u)
+      for (v,p) in self.lista_adj[u]:
+        if dist[p] > dist[u]+self:
+          dist
+
+    return dist, pred
     
